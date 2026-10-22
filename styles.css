@@ -1,0 +1,521 @@
+/* ==========================================================
+   Elaine DeRubbo portfolio: shared styles
+   Every page uses this one file. Change a color here and it
+   changes everywhere.
+   ========================================================== */
+
+/* ---------- Brand tokens ---------- */
+:root {
+  /* Colors */
+  --plum: #4A1F45;       /* headings, nav, footer, large color fields */
+  --raspberry: #8E2347;  /* accent: buttons, links, eyebrow labels (sparingly) */
+  --sage: #CBD9C3;       /* backgrounds only, never text */
+  --page: #FBFAF7;       /* page background */
+  --ink: #231E22;        /* body text */
+  --muted: #5E5660;      /* captions, dates, metadata */
+  --on-dark: #FFFFFF;    /* text on plum or raspberry */
+  --hairline: #E3DFDA;   /* dividers and card borders */
+
+  /* Fonts */
+  --font-heading: "Lora", Georgia, serif;
+  --font-body: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* Spacing */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 48px;
+
+  /* Corners */
+  --radius-tag: 4px;
+  --radius-button: 6px;
+  --radius-card: 12px;
+
+  /* Widest the text column gets */
+  --content-width: 1080px;
+  --reading-width: 720px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 28px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3 {
+  margin: 0 0 var(--space-2);
+  color: var(--plum);
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+h1 { font-size: 36px; line-height: 44px; }
+h2 { font-size: 28px; line-height: 36px; }
+h3 { font-size: 22px; line-height: 30px; }
+
+/* An h2 that should look like an h3, for small boxes */
+.h3-size { font-size: 22px; line-height: 30px; }
+
+.display {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+@media (min-width: 768px) {
+  .display { font-size: 48px; line-height: 56px; }
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 var(--space-2);
+}
+
+a {
+  color: var(--raspberry);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Visible focus on every link and button */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--raspberry);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.small {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.eyebrow {
+  display: block;
+  margin: 0 0 var(--space-1);
+  color: var(--raspberry);
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Hidden until a keyboard user tabs to it */
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -100px;
+  padding: var(--space-1) var(--space-2);
+  background: var(--page);
+  color: var(--raspberry);
+  border-radius: var(--radius-button);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .container { padding: 0 var(--space-3); }
+}
+
+.reading {
+  max-width: var(--reading-width);
+}
+
+main {
+  padding: var(--space-4) 0;
+}
+
+.section {
+  margin-bottom: var(--space-4);
+}
+
+/* ---------- Header and nav ---------- */
+.site-header {
+  background: var(--plum);
+  color: var(--on-dark);
+}
+
+.site-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+
+.site-name {
+  color: var(--on-dark);
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  color: var(--on-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+/* On plum, the focus ring is white so it shows up */
+.site-header a:focus-visible,
+.site-footer a:focus-visible {
+  outline-color: var(--on-dark);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--plum);
+  color: var(--on-dark);
+  padding: var(--space-4) 0;
+}
+
+.site-footer h2 {
+  color: var(--on-dark);
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.site-footer a {
+  color: var(--on-dark);
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer .small {
+  margin: 0;
+}
+
+/* ---------- Buttons ---------- */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.button {
+  display: inline-block;
+  padding: 12px var(--space-3);
+  border: 2px solid var(--raspberry);
+  border-radius: var(--radius-button);
+  background: var(--raspberry);
+  color: var(--on-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--plum);
+  border-color: var(--plum);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--raspberry);
+}
+
+.button-secondary:hover {
+  background: transparent;
+  border-color: var(--plum);
+  color: var(--plum);
+}
+
+/* ---------- Home intro ---------- */
+.intro {
+  display: grid;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.intro-photo {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+}
+
+.intro-text p {
+  font-size: 19px;
+  line-height: 30px;
+}
+
+@media (min-width: 768px) {
+  .intro {
+    grid-template-columns: 5fr 6fr;
+    gap: var(--space-4);
+  }
+}
+
+/* ---------- Cards ---------- */
+.card-grid {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  background: var(--page);
+}
+
+.card h3 {
+  margin-bottom: var(--space-1);
+}
+
+.card p {
+  flex-grow: 1;
+}
+
+/* Makes the whole card clickable through the title link */
+.card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-card);
+}
+
+.card-link:focus-visible {
+  outline: none;
+}
+
+.card:has(.card-link:hover) {
+  border-color: var(--plum);
+}
+
+.card:has(.card-link:focus-visible) {
+  outline: 3px solid var(--raspberry);
+  outline-offset: 3px;
+}
+
+.card-cta {
+  margin: 0;
+  color: var(--raspberry);
+  font-weight: 700;
+}
+
+.card:has(.card-link:hover) .card-cta {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* The wide card for Spoon Tracker */
+.card-wide {
+  margin-top: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .card-wide { padding: var(--space-4); }
+}
+
+/* ---------- Tags ---------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0 0 var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 2px var(--space-1);
+  border-radius: var(--radius-tag);
+  background: var(--sage);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* ---------- More UX work strip ---------- */
+.more-work {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .more-work { grid-template-columns: repeat(2, 1fr); }
+}
+
+.more-work li {
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.more-work h3 {
+  margin-bottom: var(--space-1);
+  font-size: 19px;
+  line-height: 28px;
+}
+
+.more-work p {
+  margin: 0;
+}
+
+/* ---------- Callouts and summary box ---------- */
+.callout {
+  padding: var(--space-3);
+  border-radius: var(--radius-card);
+  background: var(--sage);
+  color: var(--ink);
+}
+
+.callout > :last-child {
+  margin-bottom: 0;
+}
+
+.summary {
+  display: grid;
+  gap: var(--space-2) var(--space-3);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .summary { grid-template-columns: repeat(2, 1fr); }
+}
+
+.summary dt {
+  margin-bottom: 4px;
+  color: var(--plum);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.summary dd {
+  margin: 0;
+}
+
+/* ---------- Case study ---------- */
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+.case-header {
+  margin-bottom: var(--space-4);
+}
+
+.case-subtitle {
+  font-size: 19px;
+  line-height: 30px;
+}
+
+.case-section {
+  margin-bottom: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--hairline);
+}
+
+figure {
+  margin: var(--space-3) 0;
+}
+
+figure img {
+  width: 100%;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+}
+
+figcaption {
+  margin-top: var(--space-1);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.next-step {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--hairline);
+}
