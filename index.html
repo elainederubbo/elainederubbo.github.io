@@ -3,15 +3,65 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Spoon Tracker has moved</title>
-  <!-- This page only forwards old cmt-tracker links to the new spoon-tracker address. -->
-  <meta http-equiv="refresh" content="0; url=https://elainederubbo.github.io/spoon-tracker/">
-  <link rel="canonical" href="https://elainederubbo.github.io/spoon-tracker/">
+  <title>Elaine DeRubbo, UX research and design</title>
+  <meta name="description" content="[Elaine: one sentence that shows up under your name in Google results]">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <h1>Spoon Tracker has moved</h1>
-    <p><a href="https://elainederubbo.github.io/spoon-tracker/">Go to the new page</a></p>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== Nav (same on every page) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="site-name" href="index.html">Elaine DeRubbo</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+
+      <!-- ===== Intro with photo ===== -->
+      <section class="intro" aria-labelledby="intro-heading">
+        <!-- To change the photo: upload your own picture to the images folder,
+             named elaine-photo.jpg, and it replaces this one. -->
+        <img class="intro-photo" src="images/elaine-photo.jpg" width="800" height="1000"
+             alt="[Elaine: describe your photo, like: Elaine smiling outdoors]">
+
+        <div class="intro-text">
+          <span class="eyebrow">[Elaine: short label, like your title]</span>
+          <h1 id="intro-heading" class="display">[Elaine: friendly hello or headline]</h1>
+          <p>[Elaine: two or three conversational sentences. Who you are and what you love doing.]</p>
+          <p>[Elaine: one more sentence about what you're looking for or what you bring to a team.]</p>
+          <div class="button-row">
+            <a class="button" href="portfolio.html">See my work</a>
+            <a class="button button-secondary" href="about.html">About me</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
   </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <h2>Let's talk</h2>
+      <ul class="footer-links">
+        <li><a href="mailto:[Elaine: email address]">Email me</a></li>
+        <li><a href="[Elaine: LinkedIn profile web address]">LinkedIn</a></li>
+      </ul>
+      <p class="small">&copy; 2026 Elaine DeRubbo</p>
+    </div>
+  </footer>
 </body>
 </html>
