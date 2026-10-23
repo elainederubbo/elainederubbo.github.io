@@ -519,3 +519,73 @@ figcaption {
   padding-top: var(--space-4);
   border-top: 1px solid var(--hairline);
 }
+
+/* ---------- Case study: lifecycle map and flow table (draft) ---------- */
+
+.lifecycle { margin: var(--space-4) 0; }
+.lifecycle-phases {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr; gap: var(--space-2);
+}
+@media (min-width: 640px) {
+  .lifecycle-phases { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+.phase {
+  background: var(--page);
+  border: 1px solid var(--plum);
+  border-radius: var(--radius-card);
+  padding: var(--space-2);
+}
+.phase-step {
+  margin: 0;
+  font-size: 12px; line-height: 16px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--raspberry);
+}
+.phase h3 {
+  display: inline-block;
+  margin: 4px var(--space-1) 0 0;
+  font-family: var(--font-heading); font-weight: 500;
+  font-size: 20px; line-height: 28px; color: var(--plum);
+}
+.phase-count {
+  display: inline-block; margin: 0 0 var(--space-1);
+  background: var(--sage); color: var(--ink);
+  border-radius: var(--radius-tag);
+  padding: 0 var(--space-1);
+  font-size: 12px; line-height: 20px;
+}
+.lessons { list-style: none; margin: 0; padding: 0; }
+.lessons li {
+  font-size: 14px; line-height: 20px;
+  padding-top: var(--space-1);
+  border-top: 1px solid var(--hairline);
+  margin-top: var(--space-1);
+}
+.lessons li:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+.lessons .case {
+  display: block;
+  font-size: 11px; line-height: 16px; font-weight: 600;
+  color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;
+}
+.lessons .lesson-name { font-weight: 600; color: var(--plum); }
+.lessons .lesson-name::after { content: ": "; }
+.lessons .lesson-why { color: var(--ink); }
+.lifecycle-loop {
+  margin: var(--space-2) 0 0;
+  padding: var(--space-2);
+  background: var(--sage);
+  border-radius: var(--radius-card);
+  font-size: 14px; line-height: 22px;
+}
+.flow-table { width: 100%; border-collapse: collapse; margin: var(--space-3) 0; font-size: 14px; line-height: 22px; }
+.flow-table caption { text-align: left; font-weight: 600; color: var(--plum); margin-bottom: var(--space-1); }
+.flow-table th, .flow-table td { text-align: left; vertical-align: top; padding: var(--space-1) var(--space-2) var(--space-1) 0; border-bottom: 1px solid var(--hairline); }
+.flow-table th { font-size: 12px; line-height: 16px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; }
+@media (max-width: 520px) {
+  .flow-table thead { position: absolute; left: -9999px; }
+  .flow-table tr { display: block; padding: var(--space-1) 0; border-bottom: 1px solid var(--hairline); }
+  .flow-table td { display: block; border: 0; padding: 2px 0; }
+  .flow-table td:first-child { font-weight: 600; color: var(--plum); }
+  .flow-table td:last-child::before { content: "From: "; color: var(--muted); }
+}
