@@ -9,12 +9,16 @@ This folder is the whole website. Each page is one file. GitHub turns these file
 | `index.html` | Home page |
 | `about.html` | About page |
 | `portfolio.html` | Portfolio page with the case study cards |
-| `case-studies/internal-alerts.html` | Internal Alerts case study |
+| `case-studies/internal-alerts.html` | Internal Alerts (WMATA) case study |
+| `case-studies/sus-benchmarking.html` | SUS Benchmarking (Higher Logic) case study |
 | `styles.css` | Colors, fonts, and spacing for every page. You rarely need to touch this. |
 | `images/` | Your photo |
-| `case-studies/images/` | Diagrams for case studies |
 | `cmt-tracker/` | Forwards old Spoon Tracker links to the new address. Leave it alone. |
 | `404.html` | The page people see if a link is broken |
+
+The Spoon Tracker app and its case study live in a different repository, **github.com/elainederubbo/spoon-tracker**. The portfolio card links out to it.
+
+The diagrams in the case studies (like the Internal Alerts lifecycle map and the SUS benchmark chart) are built from text right on the page, not pictures, so you can edit their words the same way as any other words.
 
 ## How to change words on a page
 
@@ -36,12 +40,22 @@ If the live page still looks old after that, your browser may be showing a saved
 
 ## How to swap in a new picture
 
-1. Name your picture exactly like the one it replaces. Your home page photo is `elaine-photo.jpg`. The first diagram is `internal-alerts-diagram.jpg`.
-2. Open the folder on github.com (`images` or `case-studies/images`).
+1. Name your picture exactly like the one it replaces. Your home page photo is `elaine-photo.jpg`.
+2. Open the `images` folder on github.com.
 3. Click **Add file**, then **Upload files**, and drag your picture in.
 4. Click **Commit changes**. The new picture replaces the old one.
 
 Then open the page and update the **alt text**. That's the `alt="..."` description screen readers say out loud.
+
+## How to upload files into a folder
+
+Dragging a whole folder onto GitHub's upload page puts every file at the top level instead of inside the folder. Instead, go straight to the folder's upload page and drag in just the files:
+
+- Top level (like `index.html`, `portfolio.html`, `styles.css`): **github.com/elainederubbo/elainederubbo.github.io/upload/main**
+- Case studies: **github.com/elainederubbo/elainederubbo.github.io/upload/main/case-studies**
+- Pictures: **github.com/elainederubbo/elainederubbo.github.io/upload/main/images**
+
+If a new page and `styles.css` both changed, upload `styles.css` first so the page never shows up unstyled.
 
 ## If something breaks
 
