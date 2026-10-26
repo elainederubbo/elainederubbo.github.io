@@ -808,3 +808,6 @@ figcaption {
 .two-col ul { padding-left: 20px; }
 .two-col li { margin-bottom: var(--space-1); }
 .mini-card h4 { margin: 0 0 4px; color: var(--plum); font-family: var(--font-heading); font-weight: 500; font-size: 19px; line-height: 28px; }
+
+/* Key findings stats: remove the indent inherited from the box's list style */
+.key-findings .stat-row { padding-left: 0; }
