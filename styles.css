@@ -393,6 +393,55 @@ main {
   .card-wide { padding: var(--space-4); }
 }
 
+/* Card images */
+.card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: var(--space-2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-button);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  .card-wide-img {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: var(--space-4);
+    align-items: center;
+  }
+  .card-wide-img .card-img { margin-bottom: 0; }
+}
+
+/* Small thumbnails so earlier work stays quieter than the case studies */
+.more-work li:has(.more-img) {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  column-gap: var(--space-2);
+  grid-template-rows: auto auto 1fr;
+  align-items: start;
+}
+
+.more-work li:has(.more-img) > :not(.more-img) {
+  grid-column: 2;
+}
+
+.more-img {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  width: 96px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-button);
+}
+
 /* ---------- Tags ---------- */
 .tags {
   display: flex;
